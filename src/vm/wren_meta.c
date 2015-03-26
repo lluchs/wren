@@ -5,7 +5,7 @@
 #include <string.h>
 
 // This string literal is generated automatically from meta.wren. Do not edit.
-static const char* libSource =
+static const char* metaLibSource =
 "class Meta {\n"
 "  foreign static eval(source)\n"
 "}\n";
@@ -19,7 +19,7 @@ void metaEval(WrenVM* vm)
 
 void wrenLoadMetaLibrary(WrenVM* vm)
 {
-  wrenInterpret(vm, "", libSource);
+  wrenInterpret(vm, "", metaLibSource);
 }
 
 WrenForeignMethodFn wrenBindMetaForeignMethod(WrenVM* vm,

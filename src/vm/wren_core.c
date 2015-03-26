@@ -43,7 +43,7 @@
     } while (0);
 
 // This string literal is generated automatically from core. Do not edit.
-static const char* libSource =
+static const char* coreLibSource =
 "class Sequence {\n"
 "  contains(element) {\n"
 "    for (item in this) {\n"
@@ -1510,7 +1510,7 @@ void wrenInitializeCore(WrenVM* vm)
   PRIMITIVE(vm->numClass, "==(_)", num_eqeq);
   PRIMITIVE(vm->numClass, "!=(_)", num_bangeq);
 
-  wrenInterpret(vm, "", libSource);
+  wrenInterpret(vm, "", coreLibSource);
 
   vm->stringClass = AS_CLASS(wrenFindVariable(vm, "String"));
   PRIMITIVE(vm->stringClass, "+(_)", string_plus);
